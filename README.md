@@ -1,1 +1,0 @@
-# Scalr downloads
