@@ -6,12 +6,25 @@ This guide provides steps to download, install, configure, and start the **Scalr
 Before installing the agent, download the correct package for your system.
 
 ### For RHEL-based (RPM) Systems:
+Get the list of available packages in the repository:
 ```commandline
-curl -s -L https://github.com/Scalr/downloads/raw/test-artifacts-branch/artifacts/<RPM_PACKAGE_NAME> -o scalr-agent.rpm
+curl -s https://api.github.com/repos/Scalr/downloads/contents/agents/rpm | grep '"name":' | sed 's/.*"name": "\(.*\)".*/\1/'
+```
+
+Download package:
+```commandline
+curl -s -L https://github.com/Scalr/downloads/raw/main/agents/<RPM_PACKAGE_NAME> -o scalr-agent.rpm
 ```
 ### For Debian-based (DEB) Systems:
+Get the list of available packages in the repository:
+
 ```commandline
-curl -s -L https://github.com/Scalr/downloads/raw/test-artifacts-branch/artifacts/<DEB_PACKAGE_NAME> -o scalr-agent.deb
+curl -s https://api.github.com/repos/Scalr/downloads/contents/agents/deb | grep '"name":' | sed 's/.*"name": "\(.*\)".*/\1/'
+```
+
+Download package:
+```commandline
+curl -s -L https://github.com/Scalr/downloads/raw/main/agents/<DEB_PACKAGE_NAME> -o scalr-agent.deb
 ```
 
 Replace `<RPM_PACKAGE_NAME>` and `<DEB_PACKAGE_NAME>` with the actual package file name from the repository.
