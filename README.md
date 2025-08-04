@@ -1,28 +1,64 @@
-# Scalr Package Repository
+# Scalr Downloads
 
-This repository hosts the **Scalr Agent** packages for both **Debian-based** and **RHEL-based** Linux distributions.  
-It provides two ways to install the agent:
-
-1. **Using APT or RPM repositories (recommended)**
-2. **Manual package download and installation**
+APT and RPM package repositories for Scalr Agent.
 
 ---
 
-## 📂 Repository Structure
+## Using APT Repository
 
-```
-/
-├── apt/                    # APT repository
-├── rpm/                    # RPM repository
-├── web/                    # Web interface with installation guides
-│   ├── index.html          # Main page (APT/RPM repo setup instructions)
-│   ├── manual-install.html # Manual installation guide
-│   ├── styles.css          # Shared CSS styles
-├── pgp-key.public          # Shared public GPG key
-└── README.md               # This file    
+Add the repository GPG key:
+
+```bash
+curl -fsSL https://downloads.scalr.com/pgp-key.public | sudo gpg --dearmor -o /usr/share/keyrings/scalr-keyring.gpg
 ```
 
-The web UI is available at:  
-**[https://downloads.scalr.io](https://downloads.scalr.io)**
+Add the repository to your sources list:
+
+```bash
+echo "deb [signed-by=/usr/share/keyrings/scalr-keyring.gpg] https://downloads.scalr.com/apt stable main" | sudo tee /etc/apt/sources.list.d/scalr.list
+```
+
+Update and install:
+
+```bash
+sudo apt update
+sudo apt install scalr-agent
+```
 
 ---
+
+## Using RPM Repository
+
+Create the repository file:
+
+```bash
+sudo tee /etc/yum.repos.d/scalr.repo <<EOF
+[scalr]
+name=Scalr Agent
+baseurl=https://downloads.scalr.com/rpm
+enabled=1
+gpgcheck=1
+gpgkey=https://downloads.scalr.com/pgp-key.public
+EOF
+```
+
+Install the Scalr Agent:
+
+```bash
+sudo yum install scalr-agent
+# or for dnf-based systems:
+sudo dnf install scalr-agent
+```
+
+---
+
+## Manual Installation
+
+If you prefer to manually download and install the Scalr Agent without using package repositories:
+
+[📄 View the manual installation guide](MANUAL_INSTALL.md)
+
+## Additional Resources
+* [Scalr Official Documentation](https://docs.scalr.io/docs/introduction)
+
+* [Scalr Support](https://www.scalr.com/help-center)
