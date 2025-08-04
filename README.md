@@ -1,41 +1,148 @@
-# Available Agents
+# Scalr Downloads
 
-## Installation Instructions
+APT and RPM package repositories for Scalr Agent.
 
-For package installation guide, refer to the [INSTRUCTIONS](INSTRUCTIONS.md) page.
+---
 
-## Debian-based Packages (.deb)
+## Using APT Repository
 
-- [scalr-agent_0.40.0~20250307134445-gitb2fe657_amd64.deb](https://github.com/Scalr/downloads/raw/main/agents/deb/scalr-agent_0.40.0~20250307134445-gitb2fe657_amd64.deb?download=)
-- [scalr-agent_0.41.0~20250321134707-git0bff18d_amd64.deb](https://github.com/Scalr/downloads/raw/main/agents/deb/scalr-agent_0.41.0~20250321134707-git0bff18d_amd64.deb?download=)
-- [scalr-agent_0.42.0~20250328133943-gita907c9a_amd64.deb](https://github.com/Scalr/downloads/raw/main/agents/deb/scalr-agent_0.42.0~20250328133943-gita907c9a_amd64.deb?download=)
-- [scalr-agent_0.43.0~20250418102706-gitad514de_amd64.deb](https://github.com/Scalr/downloads/raw/main/agents/deb/scalr-agent_0.43.0~20250418102706-gitad514de_amd64.deb?download=)
-- [scalr-agent_0.43.1~20250423120332-git9b743bfe_amd64.deb](https://github.com/Scalr/downloads/raw/main/agents/deb/scalr-agent_0.43.1~20250423120332-git9b743bfe_amd64.deb?download=)
-- [scalr-agent_0.44.0~20250425115500-gitff4ed327_amd64.deb](https://github.com/Scalr/downloads/raw/main/agents/deb/scalr-agent_0.44.0~20250425115500-gitff4ed327_amd64.deb?download=)
-- [scalr-agent_0.44.2~20250505092845-gitffd9e366_amd64.deb](https://github.com/Scalr/downloads/raw/main/agents/deb/scalr-agent_0.44.2~20250505092845-gitffd9e366_amd64.deb?download=)
-- [scalr-agent_0.44.4~20250506121607-gitd0e884a6_amd64.deb](https://github.com/Scalr/downloads/raw/main/agents/deb/scalr-agent_0.44.4~20250506121607-gitd0e884a6_amd64.deb?download=)
-- [scalr-agent_0.45.0~20250515153312-git155741f9_amd64.deb](https://github.com/Scalr/downloads/raw/main/agents/deb/scalr-agent_0.45.0~20250515153312-git155741f9_amd64.deb?download=)
-- [scalr-agent_0.46.0~20250520132347-git1cb58b36_amd64.deb](https://github.com/Scalr/downloads/raw/main/agents/deb/scalr-agent_0.46.0~20250520132347-git1cb58b36_amd64.deb?download=)
-- [scalr-agent_0.47.0~20250530123343-git4a1132f8_amd64.deb](https://github.com/Scalr/downloads/raw/main/agents/deb/scalr-agent_0.47.0~20250530123343-git4a1132f8_amd64.deb?download=)
-- [scalr-agent_0.48.0~20250618125550-git665cb42d_amd64.deb](https://github.com/Scalr/downloads/raw/main/agents/deb/scalr-agent_0.48.0~20250618125550-git665cb42d_amd64.deb?download=)
-- [scalr-agent_0.49.0~20250703094026-gitd3802c37_amd64.deb](https://github.com/Scalr/downloads/raw/main/agents/deb/scalr-agent_0.49.0~20250703094026-gitd3802c37_amd64.deb?download=)
-- [scalr-agent_0.50.0~20250711105514-git1a4170dc_amd64.deb](https://github.com/Scalr/downloads/raw/main/agents/deb/scalr-agent_0.50.0~20250711105514-git1a4170dc_amd64.deb?download=)
-- [scalr-agent_0.51.0~20250718111220-gita9962d46_amd64.deb](https://github.com/Scalr/downloads/raw/main/agents/deb/scalr-agent_0.51.0~20250718111220-gita9962d46_amd64.deb?download=)
+Add the repository GPG key:
 
-## RPM-based Packages (.rpm)
+```bash
+curl -fsSL https://downloads.scalr.com/pgp-key.public | sudo gpg --dearmor -o /usr/share/keyrings/scalr-keyring.gpg
+```
 
-- [scalr-agent-0.40.0~20250307134431-gitb2fe657.rocky9.x86_64.rpm](https://github.com/Scalr/downloads/raw/main/agents/rpm/scalr-agent-0.40.0~20250307134431-gitb2fe657.rocky9.x86_64.rpm?download=)
-- [scalr-agent-0.41.0~20250321134703-git0bff18d.rocky9.x86_64.rpm](https://github.com/Scalr/downloads/raw/main/agents/rpm/scalr-agent-0.41.0~20250321134703-git0bff18d.rocky9.x86_64.rpm?download=)
-- [scalr-agent-0.42.0~20250328134005-gita907c9a.rocky9.x86_64.rpm](https://github.com/Scalr/downloads/raw/main/agents/rpm/scalr-agent-0.42.0~20250328134005-gita907c9a.rocky9.x86_64.rpm?download=)
-- [scalr-agent-0.43.0~20250418102634-gitad514de.rocky9.x86_64.rpm](https://github.com/Scalr/downloads/raw/main/agents/rpm/scalr-agent-0.43.0~20250418102634-gitad514de.rocky9.x86_64.rpm?download=)
-- [scalr-agent-0.43.1~20250423120318-git9b743bfe.rocky9.x86_64.rpm](https://github.com/Scalr/downloads/raw/main/agents/rpm/scalr-agent-0.43.1~20250423120318-git9b743bfe.rocky9.x86_64.rpm?download=)
-- [scalr-agent-0.44.0~20250425115316-gitff4ed327.rocky9.x86_64.rpm](https://github.com/Scalr/downloads/raw/main/agents/rpm/scalr-agent-0.44.0~20250425115316-gitff4ed327.rocky9.x86_64.rpm?download=)
-- [scalr-agent-0.44.2~20250505092730-gitffd9e366.rocky9.x86_64.rpm](https://github.com/Scalr/downloads/raw/main/agents/rpm/scalr-agent-0.44.2~20250505092730-gitffd9e366.rocky9.x86_64.rpm?download=)
-- [scalr-agent-0.44.4~20250506121607-gitd0e884a6.rocky9.x86_64.rpm](https://github.com/Scalr/downloads/raw/main/agents/rpm/scalr-agent-0.44.4~20250506121607-gitd0e884a6.rocky9.x86_64.rpm?download=)
-- [scalr-agent-0.45.0~20250515153142-git155741f9.rocky9.x86_64.rpm](https://github.com/Scalr/downloads/raw/main/agents/rpm/scalr-agent-0.45.0~20250515153142-git155741f9.rocky9.x86_64.rpm?download=)
-- [scalr-agent-0.46.0~20250520132505-git1cb58b36.rocky9.x86_64.rpm](https://github.com/Scalr/downloads/raw/main/agents/rpm/scalr-agent-0.46.0~20250520132505-git1cb58b36.rocky9.x86_64.rpm?download=)
-- [scalr-agent-0.47.0~20250530123311-git4a1132f8.rocky9.x86_64.rpm](https://github.com/Scalr/downloads/raw/main/agents/rpm/scalr-agent-0.47.0~20250530123311-git4a1132f8.rocky9.x86_64.rpm?download=)
-- [scalr-agent-0.48.0~20250618125645-git665cb42d.rocky9.x86_64.rpm](https://github.com/Scalr/downloads/raw/main/agents/rpm/scalr-agent-0.48.0~20250618125645-git665cb42d.rocky9.x86_64.rpm?download=)
-- [scalr-agent-0.49.0~20250703094027-gitd3802c37.rocky9.x86_64.rpm](https://github.com/Scalr/downloads/raw/main/agents/rpm/scalr-agent-0.49.0~20250703094027-gitd3802c37.rocky9.x86_64.rpm?download=)
-- [scalr-agent-0.50.0~20250711105513-git1a4170dc.rocky9.x86_64.rpm](https://github.com/Scalr/downloads/raw/main/agents/rpm/scalr-agent-0.50.0~20250711105513-git1a4170dc.rocky9.x86_64.rpm?download=)
-- [scalr-agent-0.51.0~20250718111031-gita9962d46.rocky9.x86_64.rpm](https://github.com/Scalr/downloads/raw/main/agents/rpm/scalr-agent-0.51.0~20250718111031-gita9962d46.rocky9.x86_64.rpm?download=)
+Add the repository to your sources list:
+
+```bash
+echo "deb [signed-by=/usr/share/keyrings/scalr-keyring.gpg] https://downloads.scalr.com/apt stable main" | sudo tee /etc/apt/sources.list.d/scalr.list
+```
+
+Update and install:
+
+```bash
+sudo apt update
+sudo apt install scalr-agent
+```
+
+---
+
+## Using RPM Repository
+
+Create the repository file:
+
+```bash
+sudo tee /etc/yum.repos.d/scalr.repo <<EOF
+[scalr]
+name=Scalr Agent
+baseurl=https://downloads.scalr.com/rpm
+enabled=1
+gpgcheck=1
+gpgkey=https://downloads.scalr.com/pgp-key.public
+EOF
+```
+
+Install the Scalr Agent:
+
+```bash
+sudo yum install scalr-agent
+# or for dnf-based systems:
+sudo dnf install scalr-agent
+```
+
+---
+
+## Manual Installation
+
+If you prefer to manually download and install the Scalr Agent without using package repositories:
+
+[📄 View the manual installation guide](MANUAL_INSTALL.md)
+
+---
+
+## Configure the Scalr Agent
+After installation, configure the agent using your Scalr token.
+
+```bash
+scalr-agent configure \
+--token=<YOUR_SCALR_TOKEN> \
+--url=https://scalr-iacp.scalr.io/ \
+--agent-name=$(hostname)
+```
+Replace `<YOUR_SCALR_TOKEN>` with your actual Scalr token.
+
+## Start and Enable the Scalr Agent
+Once configured, start the Scalr Agent and enable it to start on boot.
+
+### For Systemd-based Systems:
+
+```bash
+sudo systemctl start scalr-agent
+sudo systemctl enable scalr-agent
+```
+
+### For SysVinit-based Systems (Older Linux Distros):
+
+```bash
+sudo service scalr-agent start
+```
+
+## Verify Scalr Agent Status
+To check if the agent is running, use:
+
+```bash
+systemctl status scalr-agent
+```
+Or:
+```bash
+scalr-agent status
+```
+If the agent fails to start, check logs:
+```bash
+journalctl -u scalr-agent --no-pager -n 50
+```
+
+---
+
+## Uninstalling the Scalr Agent
+If you need to remove the Scalr Agent:
+
+### For RHEL-based Systems:
+
+```bash
+sudo yum remove -y scalr-agent
+```
+Or:
+
+```bash
+sudo dnf remove -y scalr-agent
+```
+
+### For Debian-based Systems:
+
+```bash
+sudo apt remove -y scalr-agent
+```
+
+To clean up leftover configuration files:
+
+```bash
+sudo rm -rf /etc/scalr-agent /var/lib/scalr-agent
+```
+
+---
+
+## Troubleshooting
+* Ensure you have internet access if you encounter issues downloading the package.
+* Check firewall rules if the agent cannot connect to https://scalr-iacp.scalr.io/.
+* If installation fails, ensure your system is up to date:
+
+```bash
+sudo yum update -y # RHEL-based
+sudo apt update    # Debian-based
+```
+
+## Additional Resources
+* [Scalr Official Documentation](https://docs.scalr.io/docs/introduction)
+
+* [Scalr Support](https://www.scalr.com/help-center)
