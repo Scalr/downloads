@@ -1,0 +1,18 @@
+Origin: Scalr
+Label: Scalr Agent Repository
+Suite: stable
+Codename: stable
+Version: 1.0
+Architectures: amd64
+Components: main
+Description: Scalr Agent APT repository for Debian and Ubuntu systems
+Date: Mon, 04 Aug 2025 15:00:36 +0000
+MD5Sum:
+ 94a5d054a4b902f54fc0d04c73b91839 557
+ 03c7fe85ef2434641e8f593f9f8b3ce7 387
+SHA1:
+ 5d22a8cac2c7a37a9c927c8c17c5cf2ff2cb7408 557
+ 26012e322c22351e0d36f5f285b43a0bd3d441b5 387
+SHA256:
+ 0999be1c5ad98acdfa362caa7eea8632a2523056b1c17ae7c37c11e81fe4454b 557
+ e8df07052be4745623db2ac3246bc4658cf8a2d0644ee96bbbed33317e4deb0f 387

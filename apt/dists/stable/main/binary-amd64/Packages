@@ -1,0 +1,17 @@
+Package: scalr-agent
+Version: 0.51.0~20250804145659-gitf20e845d
+Architecture: amd64
+Maintainer: Scalr Inc.
+Installed-Size: 622313
+Filename: downloads/apt/pool/main/scalr-agent_0.51.0~20250804145659-gitf20e845d_amd64.deb
+Size: 237148534
+MD5sum: 461440c7f4f343543d48926262e15365
+SHA1: 01c0aae2518f54dd07dfd527d72a96d04e933f5c
+SHA256: e2aca8ae7fd2194cd43f0c71f7bc9b4edaece034340b6a33f2256494bfe0ceee
+Section: misc
+Priority: extra
+Homepage: https://scalr.com
+Description: Scalr self-hosted runner agent
+License: Commercial
+Vendor: Scalr Inc. <admin@scalr.com>
+
