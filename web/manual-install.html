@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Manual installation guide for Scalr Agent on Debian and RHEL-based systems.">
+  <title>Scalr Agent Installation Guide</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Scalr Agent Installation Guide</h1>
+    <p>Manual installation steps for Debian and RHEL-based systems</p>
+  </header>
+
+  <main>
+    <p class="back-link"><a href="/index.html">&larr; Back to Downloads</a></p>
+
+    <section>
+      <h2>Download the Scalr Agent Package</h2>
+      <p>Before installing the agent, download the correct package for your system.</p>
+
+      <h3>For RHEL-based (RPM) Systems:</h3>
+      <p>Get the list of available packages in the repository:</p>
+      <pre><code>curl -s https://api.github.com/repos/Scalr/downloads/contents/agents/rpm | grep '"name":' | sed 's/.*"name": "\(.*\)".*/\1/'</code></pre>
+
+      <p>Download package:</p>
+      <pre><code>curl -s -L https://github.com/Scalr/downloads/raw/main/agents/&lt;RPM_PACKAGE_NAME&gt; -o scalr-agent.rpm</code></pre>
+
+      <h3>For Debian-based (DEB) Systems:</h3>
+      <p>Get the list of available packages in the repository:</p>
+      <pre><code>curl -s https://api.github.com/repos/Scalr/downloads/contents/agents/deb | grep '"name":' | sed 's/.*"name": "\(.*\)".*/\1/'</code></pre>
+
+      <p>Download package:</p>
+      <pre><code>curl -s -L https://github.com/Scalr/downloads/raw/main/agents/&lt;DEB_PACKAGE_NAME&gt; -o scalr-agent.deb</code></pre>
+
+      <p>Replace <code>&lt;RPM_PACKAGE_NAME&gt;</code> and <code>&lt;DEB_PACKAGE_NAME&gt;</code> with the actual package
+        file name from the repository.</p>
+    </section>
+
+    <section>
+      <h2>Install the Scalr Agent</h2>
+
+      <h3>For RHEL-based (RPM) Systems:</h3>
+      <pre><code>sudo yum install -y ./scalr-agent.rpm</code></pre>
+      <p>Or if using <code>dnf</code>:</p>
+      <pre><code>sudo dnf install -y ./scalr-agent.rpm</code></pre>
+
+      <h3>For Debian-based (DEB) Systems:</h3>
+      <pre><code>sudo dpkg -i scalr-agent.deb</code></pre>
+
+      <p>If there are missing dependencies, run:</p>
+      <pre><code>sudo apt-get install -f</code></pre>
+    </section>
+
+    <section>
+      <h2>Configure the Scalr Agent</h2>
+      <p>After installation, configure the agent using your Scalr token:</p>
+      <pre><code>scalr-agent configure \
+  --token=&lt;YOUR_SCALR_TOKEN&gt; \
+  --url=https://scalr-iacp.scalr.io/ \
+  --agent-name=$(hostname)</code></pre>
+      <p>Replace <code>&lt;YOUR_SCALR_TOKEN&gt;</code> with your actual Scalr token.</p>
+    </section>
+
+    <section>
+      <h2>Start and Enable the Scalr Agent</h2>
+
+      <h3>For Systemd-based Systems:</h3>
+      <pre><code>sudo systemctl start scalr-agent
+sudo systemctl enable scalr-agent</code></pre>
+
+      <h3>For SysVinit-based Systems (Older Linux Distros):</h3>
+      <pre><code>sudo service scalr-agent start</code></pre>
+    </section>
+
+    <section>
+      <h2>Verify Scalr Agent Status</h2>
+      <p>To check if the agent is running:</p>
+      <pre><code>systemctl status scalr-agent</code></pre>
+      <p>Or:</p>
+      <pre><code>scalr-agent status</code></pre>
+      <p>If the agent fails to start, check logs:</p>
+      <pre><code>journalctl -u scalr-agent --no-pager -n 50</code></pre>
+    </section>
+
+    <section>
+      <h2>Uninstalling the Scalr Agent</h2>
+
+      <h3>For RHEL-based Systems:</h3>
+      <pre><code>sudo yum remove -y scalr-agent</code></pre>
+      <p>Or:</p>
+      <pre><code>sudo dnf remove -y scalr-agent</code></pre>
+
+      <h3>For Debian-based Systems:</h3>
+      <pre><code>sudo apt-get remove -y scalr-agent</code></pre>
+
+      <p>To clean up leftover configuration files:</p>
+      <pre><code>sudo rm -rf /etc/scalr-agent /var/lib/scalr-agent</code></pre>
+    </section>
+
+    <section>
+      <h2>Troubleshooting</h2>
+      <ul>
+        <li>Ensure you have internet access if you encounter issues downloading the package.</li>
+        <li>Check firewall rules if the agent cannot connect to <code>https://scalr-iacp.scalr.io/</code>.</li>
+        <li>If installation fails, ensure your system is up to date:</li>
+      </ul>
+      <pre><code>sudo yum update -y    # RHEL-based
+sudo apt-get update   # Debian-based</code></pre>
+    </section>
+
+    <section>
+      <h2>Additional Resources</h2>
+      <ul>
+        <li><a href="https://docs.scalr.io/docs/introduction" target="_blank">Scalr Official Documentation</a></li>
+        <li><a href="https://www.scalr.com/help-center" target="_blank">Scalr Support</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Scalr. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
